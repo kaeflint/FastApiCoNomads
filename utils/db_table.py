@@ -1,5 +1,5 @@
-from typing import Text
-from sqlalchemy import Column,Integer,String,Boolean,Float
+from typing import Text 
+from sqlalchemy import Column,Integer,String,Boolean,Float,TEXT
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.sql.expression import null
 from .db_app import engine
@@ -20,4 +20,4 @@ class DBUsers(Base):
     __tablename__='tb_users'
     id = Column(Integer, primary_key=True, autoincrement=True,index=True)
     username= Column(String,nullable=False)
-    pswd= Column(Text,nullable=True)
+    pswd= Column(TEXT,nullable=True)

@@ -5,10 +5,24 @@ sudo apt-get update
 sudo apt-get upgrade 
 sudo apt-get install python3-pip
 
+# Install the latest anaconda
+wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+sh Anaconda3-2020.02-Linux-x86_64.sh
+source ~/.bashrc
+conda init
+
+# Create the virtual environment
+
+
+# Add conda to PATH
+echo 'export PATH=path/to/anaconda/installation/bin:$PATH' >> ~/.bashrc
+#eg echo 'export PATH=/home/ubuntu/anaconda3/bin:$PATH' >> ~/.bashrc
+
+
 
 pip install fastapi SQLAlchemy uvicorn gunicorn  cryptography  PyMySQL mysql-connector-python
-sudo apt install uvicorn
-sudo apt install gunicorn
+sudo apt install uvicorn -y
+sudo apt install gunicorn -y
 
 # Git clone the code from the repository
 git clone -b BRANCH_NAME URL
