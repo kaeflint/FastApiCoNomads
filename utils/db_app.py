@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session,sessionmaker
 from sqlalchemy import Boolean,Column,Integer,Float,String
+from sqlalchemy.exc import SQLAlchemyError
 
 #SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 #SQLALCHEMY_DATABASE_URL = "mysql+mysqldb://jojo89:Melody2Jason@localhost/Fastapi_test"
@@ -17,6 +18,13 @@ def get_db():
     finally:
         db.close()
 
-
+def executeSQLCommand(sql_command: str,):
+    try:
+        engine.execute(sql_command)
+        return True
+    except SQLAlchemyError as e:
+        error = str(e.__dict__['orig'])
+        print(error)
+    return False
 
 
