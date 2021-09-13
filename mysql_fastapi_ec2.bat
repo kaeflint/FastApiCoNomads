@@ -3,6 +3,8 @@
 #Using ubuntu EC2 instance
 sudo apt-get update
 sudo apt-get upgrade 
+sudo apt install gcc g++
+sudo apt install mariadb-client-core-10.3
 sudo apt-get install python3-pip
 
 # Install the latest anaconda
@@ -10,7 +12,12 @@ wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 sh Anaconda3-2020.02-Linux-x86_64.sh
 source ~/.bashrc
 conda init
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.python.sh | bash
+sudo apt-get install git-lfs
+sudo apt install mysql-client-core-8.0
 
+# git ssh-keygen
+  ssh-keygen -t rsa -b 4096 -C esseljojo1990@gmail.com
 # Create the virtual environment
 
 
@@ -18,6 +25,7 @@ conda init
 echo 'export PATH=path/to/anaconda/installation/bin:$PATH' >> ~/.bashrc
 #eg echo 'export PATH=/home/ubuntu/anaconda3/bin:$PATH' >> ~/.bashrc
 
+#pip install -r install_requirements.txt  --no-cache-dir
 
 
 pip install fastapi SQLAlchemy uvicorn gunicorn  cryptography  PyMySQL mysql-connector-python
